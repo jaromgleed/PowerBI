@@ -1,0 +1,276 @@
+﻿{
+  "Actions": [
+    {
+      "Id": 0,
+      "Name": "Organize - Columns Into Common Categories",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Model.AllColumns)\n{\n    var columnName = obj.Name;\n\n    if (columnName.EndsWith(\"Name\") || columnName.EndsWith(\"Code\"))\n    {\n        if (columnName.StartsWith(\"Address\"))\n        {\n            obj.DisplayFolder = \"Address Details\";\n        }\n        else if (columnName.StartsWith(\"Balance Sheet Rollup\"))\n        {\n            obj.DisplayFolder = \"Balance Sheet Rollups\";\n        }\n        else if (columnName.StartsWith(\"BU Category\"))\n        {\n            obj.DisplayFolder = \"BU Categories\";\n        }\n        else if (columnName.StartsWith(\"EEO\"))\n        {\n            obj.DisplayFolder = \"EEO Details\";\n        }\n        else if (columnName.StartsWith(\"ENV\") || columnName.StartsWith(\"Data Source\"))\n        {\n            obj.DisplayFolder = \"Environmental Details\";\n        }\n        else if (columnName.StartsWith(\"GGB\"))\n        {\n            obj.DisplayFolder = \"GGB Rollups\";\n        }\n        else if (columnName.StartsWith(\"GL Bank Account\"))\n        {\n            obj.DisplayFolder = \"GL Details\";\n        }\n        else if (columnName.StartsWith(\"Integration\"))\n        {\n            obj.DisplayFolder = \"Integration Details\";\n        }\n        else if (columnName.StartsWith(\"Segment\"))\n        {\n            obj.DisplayFolder = \"Segment Details\";\n        }\n        else if (columnName.StartsWith(\"Division\"))\n        {\n            obj.DisplayFolder = \"Division Details\";\n        }\n        else if (columnName.StartsWith(\"Region\"))\n        {\n            obj.DisplayFolder = \"Region Details\";\n        }\n        else if (columnName.StartsWith(\"Branch\") || columnName.StartsWith(\"Satellite\"))\n        {\n            obj.DisplayFolder = \"Branch and Satellite Details\";\n        }\n        else if (columnName.StartsWith(\"BU\"))\n        {\n            obj.DisplayFolder = \"BU Details\";\n        }\n        else if (columnName.StartsWith(\"Company\"))\n        {\n            obj.DisplayFolder = \"Company Details\";\n        }\n        else if (columnName.StartsWith(\"Country\") || columnName.StartsWith(\"State\"))\n        {\n            obj.DisplayFolder = \"Country and State Details\";\n        }\n        else if (columnName.StartsWith(\"Planned\") || columnName.StartsWith(\"Actual\") || columnName.StartsWith(\"Final Payment\") || columnName.StartsWith(\"Misc\"))\n        {\n            obj.DisplayFolder = \"Miscellaneous Dates\";\n        }\n        else if (columnName.StartsWith(\"Tax\"))\n        {\n            obj.DisplayFolder = \"Tax Details\";\n        }\n        else if (columnName.StartsWith(\"Manager\"))\n        {\n            obj.DisplayFolder = \"Manager Details\";\n        }\n        else if (columnName.StartsWith(\"Lob\"))\n        {\n            obj.DisplayFolder = \"Lob Details\";\n        }\n        else if (columnName.StartsWith(\"Transaction\"))\n        {\n            obj.DisplayFolder = \"Transaction Details\";\n        }\n        else if (columnName.StartsWith(\"Accounting Center\"))\n        {\n            obj.DisplayFolder = \"Accounting Center Details\";\n        }\n        else if (columnName.StartsWith(\"Acquired Date\"))\n        {\n            obj.DisplayFolder = \"Acquisition Details\";\n        }\n        else if (columnName.StartsWith(\"Acquisition Tracker\"))\n        {\n            obj.DisplayFolder = \"Acquisition Tracker Details\";\n        }\n        else if (columnName.StartsWith(\"Actual\") || columnName.StartsWith(\"Planned\") || columnName.StartsWith(\"Final Payment\") || columnName.StartsWith(\"Misc\"))\n        {\n            obj.DisplayFolder = \"Date Details\";\n        }\n        else if (columnName.StartsWith(\"Alternative Division\"))\n        {\n            obj.DisplayFolder = \"Alternative Division Details\";\n        }\n        else if (columnName.StartsWith(\"Ar Address\"))\n        {\n            obj.DisplayFolder = \"AR Address Details\";\n        }\n        else if (columnName.StartsWith(\"Balance Sheet BU\"))\n        {\n            obj.DisplayFolder = \"Balance Sheet BU Details\";\n        }\n        else if (columnName.StartsWith(\"BU \"))\n        {\n            obj.DisplayFolder = \"BU Details\";\n        }\n        else if (columnName.StartsWith(\"BU Active\"))\n        {\n            obj.DisplayFolder = \"BU Active Details\";\n        }\n        else if (columnName.StartsWith(\"BU Object\"))\n        {\n            obj.DisplayFolder = \"BU Object Details\";\n        }\n        else if (columnName.StartsWith(\"BU Related\"))\n        {\n            obj.DisplayFolder = \"BU Related Details\";\n        }\n        else if (columnName.StartsWith(\"BU Type\"))\n        {\n            obj.DisplayFolder = \"BU Type Details\";\n        }\n        else if (columnName.StartsWith(\"Carrier BU\"))\n        {\n            obj.DisplayFolder = \"Carrier BU Details\";\n        }\n    }\n    else\n    {\n        // Grouping for columns that don't end with \"Name\" or \"Code\"\n        if (columnName.StartsWith(\"Accounting Center\"))\n        {\n            obj.DisplayFolder = \"Accounting Center Details\";\n        }\n        else if (columnName.StartsWith(\"Acquired Date\"))\n        {\n            obj.DisplayFolder = \"Acquisition Details\";\n        }\n        else if (columnName.StartsWith(\"Acquisition Tracker\"))\n        {\n            obj.DisplayFolder = \"Acquisition Tracker Details\";\n        }\n        else if (columnName.StartsWith(\"Actual\") || columnName.StartsWith(\"Planned\") || columnName.StartsWith(\"Final Payment\") || columnName.StartsWith(\"Misc\"))\n        {\n            obj.DisplayFolder = \"Date Details\";\n        }\n        else if (columnName.StartsWith(\"Alternative Division\"))\n        {\n            obj.DisplayFolder = \"Alternative Division Details\";\n        }\n        else if (columnName.StartsWith(\"Ar Address\"))\n        {\n            obj.DisplayFolder = \"AR Address Details\";\n        }\n        else if (columnName.StartsWith(\"Balance Sheet BU\"))\n        {\n            obj.DisplayFolder = \"Balance Sheet BU Details\";\n        }\n        else if (columnName.StartsWith(\"BU \"))\n        {\n            obj.DisplayFolder = \"BU Details\";\n        }\n        else if (columnName.StartsWith(\"BU Active\"))\n        {\n            obj.DisplayFolder = \"BU Active Details\";\n        }\n        else if (columnName.StartsWith(\"BU Object\"))\n        {\n            obj.DisplayFolder = \"BU Object Details\";\n        }\n        else if (columnName.StartsWith(\"BU Related\"))\n        {\n            obj.DisplayFolder = \"BU Related Details\";\n        }\n        else if (columnName.StartsWith(\"BU Type\"))\n        {\n            obj.DisplayFolder = \"BU Type Details\";\n        }\n        else if (columnName.StartsWith(\"Carrier BU\"))\n        {\n            obj.DisplayFolder = \"Carrier BU Details\";\n        }\n        // Add more conditions for other folder groupings as needed\n    }\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 1,
+      "Name": "Find and Replace (Measures)",
+      "Enabled": "true",
+      "Execute": "foreach (var measure in Model.AllMeasures)\n{\n    // Replace \"oldString\" with \"newString\"\n    string oldString = \"HASONEVALUE( 'Time Period Selection'[Time Period] ) && HASONEVALUE( 'Date (Transaction)'[Transaction Year Num] ),\";\n    string newString = @\"HASONEVALUE( 'Time Period Selection'[Time Period] ) && SELECTEDVALUE('Time Period Selection'[Time Period]) <> \"\"Custom Range\"\" && HASONEVALUE( 'Date (Transaction)'[Transaction Year Num] ),\";\n\n    measure.Expression = measure.Expression.Replace(oldString, newString);\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 2,
+      "Name": "Keys - Hide in Keys Folder",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Model.AllColumns)\n{\n    if (obj.Name.Contains(\" Key\"))\n    {\n        obj.DisplayFolder = \"Keys\";\n        obj.IsHidden = true; // Add this line to make the column invisible\n        obj.DataType = DataType.Double;\n        obj.SummarizeBy = AggregateFunction.None;\n    }\n    else if (obj.Name.Contains(\" Code\"))\n    {\n        obj.DisplayFolder = \"Codes\";\n        obj.IsHidden = false; // Add this line to make the column invisible\n    }\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 3,
+      "Name": "Schema Builder - CamelCase to Proper Case",
+      "Enabled": "true",
+      "Execute": "foreach(var obj in Model.AllColumns) {\n    var oldName = obj.Name;\n    var newName = new System.Text.StringBuilder();\n    for(int i = 0; i < oldName.Length; i++) {\n        // First letter should always be capitalized:\n        if(i == 0) newName.Append(Char.ToUpper(oldName[i]));\n\n        // A sequence of two uppercase letters followed by a lowercase letter should have a space inserted\n        // after the first letter:\n        else if(i + 2 < oldName.Length && char.IsLower(oldName[i + 2]) && char.IsUpper(oldName[i + 1]) && char.IsUpper(oldName[i]))\n        {\n            newName.Append(oldName[i]);\n            newName.Append(\" \");\n            i++; // Skip the next uppercase letter\n        }\n        // Insert a space between numbers and characters:\n        else if(i + 1 < oldName.Length && ((char.IsDigit(oldName[i]) && char.IsLetter(oldName[i+1])) || (char.IsLetter(oldName[i]) && char.IsDigit(oldName[i+1]))))\n        {\n            newName.Append(oldName[i]);\n            newName.Append(\" \");\n        }\n        // All other sequences of a lowercase letter followed by an uppercase letter, should have a space\n        // inserted after the first letter:\n        else if(i + 1 < oldName.Length && char.IsLower(oldName[i]) && char.IsUpper(oldName[i+1]))\n        {\n            newName.Append(oldName[i]);\n            newName.Append(\" \");\n        }\n        else\n        {\n            newName.Append(oldName[i]);\n        }\n    }\n    obj.Name = newName.ToString();\n}",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 4,
+      "Name": "Schema Update - Uppercase First Letter",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Model.AllColumns)\n{\n    var oldName = obj.Name;\n    var newName = new System.Text.StringBuilder();\n\n    for (int i = 0; i < oldName.Length; i++)\n    {\n        // Uppercase the first letter and any letter that follows a space:\n        if (i == 0 || (i - 1 >= 0 && oldName[i - 1] == ' '))\n        {\n            newName.Append(Char.ToUpper(oldName[i]));\n        }\n        else\n        {\n            newName.Append(oldName[i]);\n        }\n    }\n\n    obj.Name = newName.ToString();\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 5,
+      "Name": "Schema Update - Uppercase Acronyms",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Model.AllColumns)\n{\n    var oldName = obj.Name;\n    var newName = new System.Text.StringBuilder();\n    var acronyms = new HashSet<string> {\"Ajg\", \"Id\", \"Aps\", \"Bu\",\"Trn\", \"Etl\", \"EEO\", \"Env\", \"Ggb\", \"Gl\", \"Sid\", \"Usd\", \"Pegusd\", \"Lcl\", \"Trns\", \"Peg\", \"Am\", \"Bsd\", \"Gbs\", \"Ggb\", \"Nz\", \"Aus\", \"Ib\", \"Nais\", \"Ytd\", \"Qtd\", \"Mtd\", \"Os\", \"Cid\", \"Dnb\", \"Cde\" };\n\n    for (int i = 0; i < oldName.Length; i++)\n    {\n        // Check if the current word is an acronym, and uppercase the entire word:\n        var wordStart = i;\n        while (i < oldName.Length && char.IsLetter(oldName[i]))\n        {\n            i++;\n        }\n        var word = oldName.Substring(wordStart, i - wordStart);\n        \n        if (acronyms.Contains(word))\n        {\n            newName.Append(word.ToUpper());\n        }\n        else\n        {\n            newName.Append(word);\n        }\n\n        // Append non-letter characters:\n        while (i < oldName.Length && !char.IsLetter(oldName[i]))\n        {\n            newName.Append(oldName[i]);\n            i++;\n        }\n        i--; // Decrement i to account for the increment in the outer loop\n    }\n\n    obj.Name = newName.ToString();\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 6,
+      "Name": "Documentation - Measures/Columns/Relationships/Roles",
+      "Enabled": "true",
+      "Execute": "// Construct a list of all visible columns, measures, relationships, and roles:\nvar objects = Model.AllMeasures\n    .Where(m => !m.IsHidden && !m.Table.IsHidden)\n    .Cast<object>()\n    .Concat(Model.AllColumns\n        .Where(c => !c.IsHidden && !c.Table.IsHidden)\n        .Cast<object>())\n    .Concat(Model.Relationships.Cast<object>())\n    .Concat(Model.Roles.Cast<object>())\n    .OfType<TabularEditor.TOMWrapper.ITabularNamedObject>();\n\n// Get their properties in TSV format (tabulator-separated):\nvar tsv = ExportProperties(objects, \"Name,ObjectType,Parent,Description,FormatString,DataType,Expression\");\n\n// (Optional) Output to screen (can then be copy-pasted into Excel):\n// tsv.Output();\n\n// Get the model name\nvar modelName = Model.Database.Name;\n\n// Construct the filename using the model name\nvar filename = @\"C:\\Users\\jgleed\\Downloads\\\" + modelName + \".tsv\";\n\n// Save the TSV to the generated filename\nSaveFile(filename, tsv);\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 7,
+      "Name": "Schema Builder - Snake_Case to Proper Case",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Model.AllColumns)\n{\n    var oldName = obj.Name;\n    var newName = new System.Text.StringBuilder();\n\n    for (int i = 0; i < oldName.Length; i++)\n    {\n        if (oldName[i] == '_')\n        {\n            // Replace underscore with space\n            newName.Append(' ');\n        }\n        else\n        {\n            if (i == 0 || oldName[i - 1] == ' ' || (i + 1 < oldName.Length && char.IsLower(oldName[i]) && char.IsUpper(oldName[i + 1])))\n            {\n                // Capitalize the first letter, after a space, or after a lowercase letter followed by an uppercase letter\n                newName.Append(char.ToUpper(oldName[i]));\n            }\n            else if (i + 1 < oldName.Length && ((char.IsDigit(oldName[i]) && char.IsLetter(oldName[i + 1])) || (char.IsLetter(oldName[i]) && char.IsDigit(oldName[i + 1]))))\n            {\n                // Insert a space between numbers and characters\n                newName.Append(oldName[i]);\n                newName.Append(' ');\n            }\n            else\n            {\n                // Convert to lowercase for all other characters\n                newName.Append(char.ToLower(oldName[i]));\n            }\n        }\n    }\n\n    obj.Name = newName.ToString().Trim(); // Trim to remove trailing spaces\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 8,
+      "Name": "Schema Builder (Table) - Snake_Case to Proper",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Selected.Table.Columns)\n{\n    var oldName = obj.Name;\n    var newName = new System.Text.StringBuilder();\n\n    for (int i = 0; i < oldName.Length; i++)\n    {\n        if (oldName[i] == '_')\n        {\n            // Replace underscore with space\n            newName.Append(' ');\n        }\n        else\n        {\n            if (i == 0 || oldName[i - 1] == ' ' || (i + 1 < oldName.Length && char.IsLower(oldName[i]) && char.IsUpper(oldName[i + 1])))\n            {\n                // Capitalize the first letter, after a space, or after a lowercase letter followed by an uppercase letter\n                newName.Append(char.ToUpper(oldName[i]));\n            }\n            else if (i + 1 < oldName.Length && ((char.IsDigit(oldName[i]) && char.IsLetter(oldName[i + 1])) || (char.IsLetter(oldName[i]) && char.IsDigit(oldName[i + 1]))))\n            {\n                // Insert a space between numbers and characters\n                newName.Append(oldName[i]);\n                newName.Append(' ');\n            }\n            else\n            {\n                // Convert to lowercase for all other characters\n                newName.Append(char.ToLower(oldName[i]));\n            }\n        }\n    }\n\n    obj.Name = newName.ToString().Trim(); // Trim to remove trailing spaces\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 9,
+      "Name": "Scheuma Update (Table) Uppercase Acronyms",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Selected.Table.Columns)\n{\n    var oldName = obj.Name;\n    var newName = new System.Text.StringBuilder();\n    var acronyms = new HashSet<string> { \"Id\", \"Aps\", \"Bu\",\"Trn\", \"Etl\", \"EEO\", \"Env\", \"Ggb\", \"Gl\", \"Sid\", \"Usd\", \"Pegusd\", \"Lcl\", \"Trns\", \"Peg\", \"Am\", \"Bsd\", \"Gbs\", \"Ggb\", \"Nz\", \"Aus\", \"Ib\", \"Nais\", \"Ytd\", \"Qtd\", \"Mtd\", \"Jde\", \"Cde\" };\n\n    for (int i = 0; i < oldName.Length; i++)\n    {\n        // Check if the current word is an acronym, and uppercase the entire word:\n        var wordStart = i;\n        while (i < oldName.Length && char.IsLetter(oldName[i]))\n        {\n            i++;\n        }\n        var word = oldName.Substring(wordStart, i - wordStart);\n        \n        if (acronyms.Contains(word))\n        {\n            newName.Append(word.ToUpper());\n        }\n        else\n        {\n            newName.Append(word);\n        }\n\n        // Append non-letter characters:\n        while (i < oldName.Length && !char.IsLetter(oldName[i]))\n        {\n            newName.Append(oldName[i]);\n            i++;\n        }\n        i--; // Decrement i to account for the increment in the outer loop\n    }\n\n    obj.Name = newName.ToString();\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 10,
+      "Name": "Schema Update (Table) - Uppercase First Letter",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Selected.Table.Columns)\n{\n    var oldName = obj.Name;\n    var newName = new System.Text.StringBuilder();\n\n    for (int i = 0; i < oldName.Length; i++)\n    {\n        // Uppercase the first letter and any letter that follows a space:\n        if (i == 0 || (i - 1 >= 0 && oldName[i - 1] == ' '))\n        {\n            newName.Append(Char.ToUpper(oldName[i]));\n        }\n        else\n        {\n            newName.Append(oldName[i]);\n        }\n    }\n\n    obj.Name = newName.ToString();\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 11,
+      "Name": "Schema Update (Table) - Keys and Code Organization",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Selected.Table.Columns)\n{\n    if (obj.Name.Contains(\" Key\"))\n    {\n        obj.DisplayFolder = \"Keys\";\n        obj.IsHidden = true; // Add this line to make the column invisible\n        obj.DataType = DataType.Double;\n        obj.SummarizeBy = AggregateFunction.None;\n    }\n    else if (obj.Name.Contains(\" Code\"))\n    {\n        obj.DisplayFolder = \"Codes\";\n        obj.IsHidden = false; // Add this line to make the column invisible\n    }\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 12,
+      "Name": "Organize - Date Table into Folders",
+      "Enabled": "true",
+      "Execute": "List<string> prefixes = new List<string> { \"MTD\", \"Qtdind\", \"Year To Date\", \"YTD\", \"QTD\" };\n\nforeach (var obj in Selected.Table.Columns)\n{\n    var columnName = obj.Name;\n\n  \n     if (columnName.StartsWith(\"Fiscal \"))\n        {\n            obj.DisplayFolder = \"Fiscal Date Attributes\";\n        }\nelse if (columnName.StartsWith(\"Current \"))\n        {\n            obj.DisplayFolder = \"Current Date Attributes\";\n        }\nelse if (columnName.StartsWith(\"Prior \"))\n        {\n            obj.DisplayFolder = \"Prior Date Attributes\";\n        }\nelse if (columnName.StartsWith(\"Future \"))\n        {\n            obj.DisplayFolder = \"Future Date Attributes\";\n        }\nelse if (prefixes.Any(prefix => columnName.StartsWith(prefix + \" \")))\n{\n    obj.DisplayFolder = \"X To Date Attributes\";\n}\nelse if (columnName.StartsWith(\"Rolling \"))\n        {\n            obj.DisplayFolder = \"Rolling Date Attributes\";\n        }\nelse if (columnName.EndsWith(\"Offset\"))\n        {\n            obj.DisplayFolder = \"Offset Date Attributes\";\n        }\n\nelse obj.DisplayFolder = \"Date Attributes\";\n}",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 13,
+      "Name": "Schema Update - Indicators as Boolean Type",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Selected.Table.Columns)\n{\n    // Check if the column name ends with \"indicator\" or \"IND\" (case-insensitive)\n        if (obj.Name.EndsWith(\"indicator\", StringComparison.OrdinalIgnoreCase) || obj.Name.EndsWith(\"IND\", StringComparison.OrdinalIgnoreCase))\n        {\n            // Set the data type of the column to Boolean\n            obj.DataType = DataType.Boolean;\n        }\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 14,
+      "Name": "Find and Replace (Columns)",
+      "Enabled": "true",
+      "Execute": "foreach (var column in Selected.Table.Columns)\n{\n    // Replace \"oldString\" with \"newString\"\n    string oldString = \"_MDM\";\n    string newString = \" MDM\";\n\n    column.Name = column.Name.Replace(oldString, newString);\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 15,
+      "Name": "Model Change - Set Partition Mode to Dual",
+      "Enabled": "true",
+      "Execute": "foreach (var table in Selected.Tables)\n{\n    // Iterate through partitions in each table\n    foreach (var partition in table.Partitions)\n    {\n        // Update partition mode to Dual\n        partition.Mode = ModeType.Dual;\n    }\n}",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 16,
+      "Name": "Model Change - Find and Replace String in Partitions",
+      "Enabled": "true",
+      "Execute": "foreach (var table in Model.Tables)\n{\n    foreach (var partition in table.Partitions)\n    {\n        // Get the M code of the partition\n        string mCode = partition.Expression;\n\n        // Search and replace the desired string\n        string searchString = \"VW_\";\n        string replacementString = \"\";\n\n        if (mCode.Contains(searchString))\n        {\n            // Replace the string\n            mCode = mCode.Replace(searchString, replacementString);\n\n            // Update the M code in the partition\n            partition.Expression = mCode;\n        }\n    }\n}\n\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 17,
+      "Name": "Schema Update Folder Groupings",
+      "Enabled": "true",
+      "Execute": "foreach (var obj in Selected.Table.Measures)\n{\n    var columnName = obj.Name;\n\n  \n     if (columnName.EndsWith(\" LCL\"))\n        {\n            obj.DisplayFolder = \"Currency (Local)\";\n        }\nelse if (columnName.EndsWith(\" PEG\"))\n        {\n            obj.DisplayFolder = \"Currency (PEG)\";\n        }\nelse if (columnName.EndsWith(\" TRN\"))\n        {\n            obj.DisplayFolder = \"Currency (TRN)\";\n        }\nelse if (columnName.EndsWith(\" TRNS\"))\n        {\n            obj.DisplayFolder = \"Currency (TRN)\";\n        }\nelse if (columnName.EndsWith(\" USD\"))\n        {\n            obj.DisplayFolder = \"Currency (USD)\";\n        }\nelse if (columnName.StartsWith(\"Calc_\"))\n        {\n            obj.DisplayFolder = \"Intermediate Calculations\";\n        }\nelse if (columnName.StartsWith(\"Sum of\"))\n        {\n            obj.DisplayFolder = \"Sum of Measures\";\n        }\n}",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 18,
+      "Name": "Schema Update - Set Summarize By",
+      "Enabled": "true",
+      "Execute": "foreach (var column in Selected.Table.Columns)\n{\n    column.SummarizeBy = AggregateFunction.None;\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 19,
+      "Name": "Schema Update - Format Double as Whole Number",
+      "Enabled": "true",
+      "Execute": "foreach (var column in Selected.Table.Columns)\n{\n    if (column.DataType == DataType.Double)\n    {\n        column.FormatString = \"#,###\";\n    }\n}\n\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 20,
+      "Name": "Schema Update - Bulk Update Source Column Name",
+      "Enabled": "true",
+      "Execute": "// Define a prefix to add to each column's source column name\nstring prefix = \"PAYEE_\";\n\n// Loop through each selected table\nforeach(var table in Selected.Tables)\n{\n    // Loop through each column in the table\n    foreach(var column in table.DataColumns)\n    {\n        // Get the original source column name\n        var sourceColumn = column.SourceColumn;\n\n        // Check if the column has a source column\n        if(!string.IsNullOrEmpty(sourceColumn))\n        {\n            // Prefix the source column name with the defined prefix\n            column.SourceColumn = prefix + sourceColumn;\n        }\n    }\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 21,
+      "Name": "Documentation - Extract All Tables/Columns/Partitions",
+      "Enabled": "true",
+      "Execute": "// Construct a list of all tables, columns, measures, and partitions:\nvar objects = Model.Tables\n    .SelectMany(t => t.Columns.Cast<ITabularNamedObject>())\n    .Concat(Model.Tables.Cast<ITabularNamedObject>())\n    .Concat(Model.Tables.SelectMany(t => t.Partitions.Cast<ITabularNamedObject>()));\n\n// Get their properties in TSV format (tabulator-separated):\nvar tsv = ExportProperties(objects,\"Name,ObjectType,Parent,Description,FormatString,DataType,Expression\");\n\n// Specify the file path for the Downloads folder:\nvar filePath = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.UserProfile), \"Downloads\", \"pfdocumentation.tsv\");\n\n// Save the TSV to the specified file path:\nSaveFile(filePath, tsv);\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 22,
+      "Name": "Schema Update - Replace Source Column String",
+      "Enabled": "true",
+      "Execute": "// Loop through each selected table\nforeach(var table in Selected.Tables)\n{\n    // Loop through each column in the table\n    foreach(var column in table.DataColumns)\n    {\n        // Get the original source column name\n        var sourceColumn = column.SourceColumn;\n\n        // Check if the column has a source column and contains \"_INDICATOR\"\n        if(!string.IsNullOrEmpty(sourceColumn) && sourceColumn.Contains(\"NUMBER\"))\n        {\n            // Replace \"_INDICATOR\" with \"IND\"\n            column.SourceColumn = sourceColumn.Replace(\"NUMBER\", \"NUM\");\n        }\n    }\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 23,
+      "Name": "Bulk Create Relationships",
+      "Enabled": "true",
+      "Execute": "// Define the column name\nstring columnName = \"Policy Coverage Element Key\";\n\n// Loop through each selected table\nforeach (var table in Model.Tables)\n{\n    if(table.TableGroup == \"Facts\"){\n    try\n    {\n        // Obtain references to the columns\n        var fromColumn = table.Columns[columnName] as DataColumn;\n        var toColumn = Model.Tables[\"Policy Coverage Element\"].Columns[columnName] as DataColumn;\n\n        // Create a relationship\n        var donkeyKong = Model.AddRelationship();\n\n        // Set the properties of the relationship\n        donkeyKong.FromCardinality = RelationshipEndCardinality.Many;\n        donkeyKong.ToCardinality = RelationshipEndCardinality.One;\n        donkeyKong.FromColumn = fromColumn;\n        donkeyKong.ToColumn = toColumn;\n    }\n    catch (Exception ex)\n    {\n        // Handle the error (for example, log or display an error message)\n        Console.WriteLine($\"Error processing table {table.Name}: {ex.Message}\");\n    }\n}\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 24,
+      "Name": "Schema Builder - Delete All ETL Columns",
+      "Enabled": "true",
+      "Execute": "// Define the prefix to search for\nstring prefix = \"ETL \";\n\n// Loop through each table in the model\nforeach (var table in Model.Tables)\n{\n    // Loop through each data column in the table\n    foreach (var column in table.DataColumns.ToList()) // Using ToList() to create a copy of the collection to avoid modification during iteration\n    {\n        // Check if the column name starts with the specified prefix\n        if (column.Name.StartsWith(prefix))\n        {\n            // Delete the column\n            column.Delete();\n        }\n    }\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 25,
+      "Name": "Relationship - Bulk update property based on Relationship Columns",
+      "Enabled": "true",
+      "Execute": "foreach (var relationship in Model.Relationships)\n{\n    // Check if the relationship's \"toColumn\" is named \"Date(Policy Effective)[Date Key]\"\n    if (relationship.ToColumn == (Model.Tables[\"Date (Policy Line Effective)\"].Columns[\"Date Key\"] as DataColumn))\n    {\n        // Set the relationship to inactive\n        relationship.IsActive = false;\n    }\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 26,
+      "Name": "Measure - Format All Measures",
+      "Enabled": "true",
+      "Execute": "foreach (var measure in Model.AllMeasures){\n    measure.FormatDax();\n}",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 27,
+      "Name": "Measure - CamelCase to Proper Case",
+      "Enabled": "true",
+      "Execute": "foreach(var obj in Selected.Table.Measures) {\n    var oldName = obj.Expression;\n    var newName = new System.Text.StringBuilder();\n    for(int i = 0; i < oldName.Length; i++) {\n        // First letter should always be capitalized:\n        if(i == 0) newName.Append(Char.ToUpper(oldName[i]));\n\n        // A sequence of two uppercase letters followed by a lowercase letter should have a space inserted\n        // after the first letter:\n        else if(i + 2 < oldName.Length && char.IsLower(oldName[i + 2]) && char.IsUpper(oldName[i + 1]) && char.IsUpper(oldName[i]))\n        {\n            newName.Append(oldName[i]);\n            newName.Append(\" \");\n            i++; // Skip the next uppercase letter\n        }\n        // Insert a space between numbers and characters:\n        else if(i + 1 < oldName.Length && ((char.IsDigit(oldName[i]) && char.IsLetter(oldName[i+1])) || (char.IsLetter(oldName[i]) && char.IsDigit(oldName[i+1]))))\n        {\n            newName.Append(oldName[i]);\n            newName.Append(\" \");\n        }\n        // All other sequences of a lowercase letter followed by an uppercase letter, should have a space\n        // inserted after the first letter:\n        else if(i + 1 < oldName.Length && char.IsLower(oldName[i]) && char.IsUpper(oldName[i+1]))\n        {\n            newName.Append(oldName[i]);\n            newName.Append(\" \");\n        }\n        else\n        {\n            newName.Append(oldName[i]);\n        }\n    }\n    obj.Expression = newName.ToString();\n}",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 28,
+      "Name": "Schema Update - Bulk Create Columns",
+      "Enabled": "true",
+      "Execute": "// List of column names\nvar columnNames = new List<string> {\n \"BrokerageExpenseAmt_BASE_NonAdd\",\n    \"CommissionRevenueAmt_BASE_NonAdd\",\n    \"FeeRevenueAmt_BASE_NonAdd\",\n    \"BrokerageExpenseAmt_BASE\",\n    \"CommissionRevenueAmt_BASE\",\n    \"FeeRevenueAmt_BASE\",\n    \"TotalPolicyExpectedAmt_BASE\",\n    \"ProcessedRevenueAmt_BASE\",\n    \"NetAccrualAmt_BASE\",\n    \"EffectiveAmt_BASE\",\n    \"EffectiveProcessedRevenueAmt_BASE\",\n    \"EffectiveNetAccrualAmt_BASE\"\n};\n\n\n// Get the table object\nforeach(var table in Selected.Tables)\n{\n    foreach (var columnName in columnNames)\n    {\n        // Check if the data column already exists\n            var column = table.AddDataColumn(name: columnName, sourceColumn: columnName, dataType: DataType.Double);\n            column.SourceColumn = columnName;\n            column.IsHidden = true;\n        \n    };\n    foreach (var c in columnNames)\n    {\n        var newMeasure = table.AddMeasure(\n        \"NG Sum of \" + c,                    // Name\n        \"ROUND(SUM(\" + table.Name + \"[\" + c + \"]),4)\"   // DAX expression\n        \n        );\n        newMeasure.DisplayFolder = \"GRE Measures\";\n    };\n};\n\n\n\n\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 29,
+      "Name": "Measure - Bulk Rename Measures",
+      "Enabled": "true",
+      "Execute": "\n    // Loop through each column in the table\n    foreach(var measure in Selected.Measures)\n    {\n        // Get the original source column name\n        var measureName = measure.Name;\n\n        // Check if the column has a source column and contains \"_INDICATOR\"\n        if(!string.IsNullOrEmpty(measureName) && measureName.StartsWith(\"NG \"))\n        {\n            // Replace \"_INDICATOR\" with \"IND\"\n            measure.Name = measureName.Replace(\"NG \", \"GAAP \");\n        }\n    }\n\n",
+      "Tooltip": "",
+      "ValidContexts": "Measure"
+    },
+    {
+      "Id": 30,
+      "Name": "Paginated Dump Filters 2",
+      "Enabled": "true",
+      "Execute": "var daxBase = \"VAR MaxFilters = 10 RETURN \";\nvar dumpFilterDax = @\"IF (\n    ISFILTERED ( {0} ), \n    VAR ___f = FILTERS ( {0} )\n    VAR ___r = COUNTROWS ( ___f )\n    VAR ___t = TOPN ( MaxFilters, ___f, {0} )\n    VAR ___d = CONCATENATEX ( ___t, {0}, \"\", \"\" )\n    VAR ___x = \"\"{0} = \"\" & ___d \n        & IF(___r > MaxFilters, \"\", ... [\"\" & ___r & \"\" items selected]\"\") & \"\" \"\"\n    RETURN ___x & UNICHAR(13) & UNICHAR(10)\n)\";\n\n// Create individual dump filters for each table\nforeach(var table in Model.Tables)\n{\n    var dax = daxBase;\n    bool first = true;\n    foreach(var column in table.Columns)\n    {\n        if(!first) dax += \" & \";\n        dax += string.Format(dumpFilterDax, column.DaxObjectFullName);\n        if(first) first = false;\n    }\n    \n    var measureName = \"DumpFilters_\" + table.Name;\n    var existingMeasure = table.Measures.FirstOrDefault(m => m.Name == measureName);\n    if(existingMeasure != null)\n    {\n        existingMeasure.Expression = dax;\n    }\n    else\n    {\n        table.AddMeasure(measureName, dax);\n    }\n}\n\n// Create the master filter combining all individual table filters\nvar masterDax = \"\";\nbool masterFirst = true;\nforeach(var table in Model.Tables)\n{\n    if(!masterFirst) masterDax += \" & \";\n    masterDax += \"IF( ISBLANK( {[DumpFilters_\" + table.Name + \"]} ), \\\"\\\", [DumpFilters_\" + table.Name + \"] & UNICHAR( 13 ) & UNICHAR( 10 ) )\";\n    if(masterFirst) masterFirst = false;\n}\n\nvar masterMeasureName = \"MasterFiltersApplied\";\nvar existingMasterMeasure = Selected.Table.Measures.FirstOrDefault(m => m.Name == masterMeasureName);\nif(existingMasterMeasure != null)\n{\n    existingMasterMeasure.Expression = masterDax;\n}\nelse\n{\n    Selected.Table.AddMeasure(masterMeasureName, masterDax);\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    },
+    {
+      "Id": 31,
+      "Name": "Debug Find Dup Columns Measures",
+      "Enabled": "true",
+      "Execute": "using System.IO;\n\n// Define the file path\nstring filePath = @\"C:\\downloads\\duplicate_columns.txt\";\n\n// Initialize a list to hold any duplicates found\nList<string> duplicateList = new List<string>();\n\n// Iterate through all columns and measures in the model\nforeach (var table in Model.Tables)\n{\n    var duplicates = table.Columns.GroupBy(c => c.Name)\n                                   .Where(g => g.Count() > 1)\n                                   .Select(g => new { ColumnName = g.Key, Count = g.Count() });\n\n    foreach (var duplicate in duplicates)\n    {\n        string duplicateInfo = $\"Duplicate Column Found in Table {table.Name}: {duplicate.ColumnName} (Count: {duplicate.Count})\";\n        duplicateList.Add(duplicateInfo);\n    }\n}\n\n// Write the duplicates to the file\nif (duplicateList.Count > 0)\n{\n    File.WriteAllLines(filePath, duplicateList);\n    Console.WriteLine($\"Duplicates found and written to {filePath}\");\n}\nelse\n{\n    Console.WriteLine(\"No duplicates found.\");\n    Output(\"No Dups\");\n}\n",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 32,
+      "Name": "Monitor - Check refresh dates of partitions",
+      "Enabled": "true",
+      "Execute": "var notRefreshed = \"\";\nforeach (var table in Model.Tables) {\n    foreach (var partition in table.Partitions) {\n        if (partition.RefreshedTime.Month != 9 && partition.RefreshedTime.Year != 1699){\n            notRefreshed += table.Name + \"\\r\\n\";\n        }\n    }\n}\nOutput(notRefreshed);",
+      "Tooltip": "",
+      "ValidContexts": "Model"
+    },
+    {
+      "Id": 33,
+      "Name": "Schema Update - Set Partition Name Equal to Table Name",
+      "Enabled": "true",
+      "Execute": "foreach (var table in Selected.Tables){\n    foreach (var partition in table.Partitions){\n        partition.Name = table.Name;\n    }\n}",
+      "Tooltip": "",
+      "ValidContexts": "Table"
+    }
+  ]
+}
